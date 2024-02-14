@@ -25,8 +25,8 @@ y4=((np.exp(x)-np.exp(-x))/(np.exp(x)-np.exp(-x)))
 #for y = g(f(x)) where u = f(x) = wx + b and y = g(u) = 1/ (1 + e^(-u))
 y5= 1/(1+np.exp(-y1))
 
-#for y = g(f(x)) where f(x) = wx + b, u = f(x), and g(u) = (e^u - e^(-u)) / (e^u - e^(-u))
-y6=((np.exp(y1)-np.exp(-y1))/(np.exp(y1)-np.exp(-y1)))
+#for y = g(f(x)) where f(x) = wx + b, u = f(x), and g(u) = (e^u - e^(-u)) / (e^u + e^(-u))
+y6=((np.exp(y1)-np.exp(-y1))/(np.exp(y1)+np.exp(-y1)))
 
 
 # for y = g3(f3(v)) where f3(v) = w3y1 + w4y2 + b, w = f3(v), and g3(w) = 1/ (1 + e^(-w))
@@ -43,8 +43,8 @@ b2=15
 x1=w2*x + b2
 y8=1/(1+np.exp(-x1))
 
-w3=10
-w4=12
+w3=-10
+w4=-12
 b=7
 y9=w3*y7+w4*y8+b
 y10=1/(1+np.exp(-y9))
@@ -100,7 +100,7 @@ plt.subplot(4,2,6)
 plt.plot(x,y6)
 plt.xlabel('x')
 plt.ylabel('y')
-plt.title('y=g(f(x)) where f(x)=wx + b,u =f(x),andg(u)=(e^u - e^(-u))/(e^u - e^(-u))')
+plt.title('y=g(f(x)) where f(x)=wx + b,u =f(x),andg(u)=(e^u - e^(-u))/(e^u + e^(-u))')
 plt.grid(True)
 plt.axhline(0, color='black', linewidth=0.5)
 plt.axvline(0, color='black', linewidth=0.5)
